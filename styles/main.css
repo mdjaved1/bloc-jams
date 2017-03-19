@@ -98,3 +98,9 @@ body {
 .clearfix::after {
    clear: both;
 }
+
+.navbar-link:hover,.navbar-link:active  {
+    background-color: white;
+    color: rgb(233,50,117);
+    
+}
