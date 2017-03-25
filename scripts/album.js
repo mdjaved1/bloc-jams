@@ -1,3 +1,20 @@
+var albumAssign = {
+    title: 'AA',
+    artist: 'BB',
+    label: 'CC',
+    year: 'DD',
+    albumArtUrl: 'assets/images/album_covers/01.png',
+    songs: [
+        { title: 'ss', duration: '4:26' },
+        { title: 'ghg', duration: '3:14' },
+        { title: 'yy', duration: '5:01' },
+        { title: 'xx', duration: '3:21'},
+        { title: 'Mata', duration: '2:15'}
+    ]
+};
+document.getElementByClassName("album").addEventListener("click", setCurrentAlbum);
+
+
 var albumPicasso = {
     title: 'The Colors',
     artist: 'Pablo Picasso',
@@ -65,3 +82,4 @@ var setCurrentAlbum = function(album) {
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+
