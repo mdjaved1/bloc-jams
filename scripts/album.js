@@ -77,6 +77,9 @@ var currentlyPlayingSong = null;
             var currentParent = element.parentElement;
             while (currentParent.className !== targetClass && currentParent.className !== null) {
             currentParent = currentParent.parentElement;
+                if(currentParent.parentElement === null ){
+                  console.log("No parent found")  
+                };
         }
         return currentParent;
     }
