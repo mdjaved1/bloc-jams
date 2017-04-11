@@ -161,3 +161,7 @@ $(document).ready(function() {
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
 });
+
+var setSong = function(songNumber){
+    currentlyPlayingSongNumber = ""
+}
