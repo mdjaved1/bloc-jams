@@ -18,7 +18,7 @@ var setVolume = function(volume) {
 };
 var getSongNumberCell = function(number){
     return $('.song-item-number[data-song-number="' + number + '"]');
-};
+}; 
 
 var createSongRow = function (songNumber, songName, songLength) {
     var template =
@@ -130,6 +130,7 @@ var $nextButton = $('.main-controls .next');
 var currentlyPlayingSongNumber = null;
 var currentSoundFile = null;
 var currentVolume = 80;
+var pausePlayButton = $('.main-controls .play-pause');
 
 var nextSong = function() {
     var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
@@ -186,11 +187,19 @@ var previousSong = function() {
     $previousSongNumberCell.html(pauseButtonTemplate);
     $lastSongNumberCell.html(lastSongNumber);
 };
+var togglePlayFromPlayerBar = function (){
+    if(currentSoundFile){
+        
+    }
+}
 
 $(document).ready(function() {
      
      setCurrentAlbum(albumPicasso);
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
+     $pausePlayButton.click(togglePlayFromPlayerBar);
+    
+    
 });
 
