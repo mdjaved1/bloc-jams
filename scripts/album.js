@@ -106,13 +106,15 @@ var playerBarPauseButton = '<span class="ion-pause"></span>';
 // Store state of playing songs
 
 var currentAlbum = null;
-var setSong(null);
+
 var currentSongFromAlbum = null;
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
+var currentlyPlayingSongNumber = null;
 
 var nextSong = function() {
     var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
+    
     // Note that we're _incrementing_ the song here
     currentSongIndex++;
 
