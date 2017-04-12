@@ -130,7 +130,7 @@ var $nextButton = $('.main-controls .next');
 var currentlyPlayingSongNumber = null;
 var currentSoundFile = null;
 var currentVolume = 80;
-var pausePlayButton = $('.main-controls .play-pause');
+var $pausePlayButton = $('.main-controls .play-pause');
 
 var nextSong = function() {
     var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
@@ -188,7 +188,16 @@ var previousSong = function() {
     $lastSongNumberCell.html(lastSongNumber);
 };
 var togglePlayFromPlayerBar = function (){
-    if(currentSoundFile){
+    if(currentSoundFile.isPaused()){
+         $('.main-controls .play-pause').html(playerBarPauseButton);
+          var $pauseSongNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
+           $pauseSongNumberCell.html(pauseButtonTemplate);
+           currentSoundFile.play();
+    }else {
+        $('.main-controls .play-pause').html(playerBarPlayButton);
+         var $playSongNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
+         $playSongNumberCell.html(playButtonTemplate);
+        currentSoundFile.pause();
         
     }
 }
